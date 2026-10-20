@@ -8,10 +8,10 @@ import { formatPrice, type Product } from "@/config/store";
 import { useCart } from "@/components/cart/CartContext";
 
 /**
- * Product card — the product is the hero of the card (Palmo §scene 8). Name,
- * tag and description are ALWAYS visible (MASTER-PLAN §6.4 / §11: no info
- * behind hover), price is shown, and adding to the cart confirms inline via the
- * global `cart:added` event (no toast stack).
+ * Product card — the store twin of the homepage collection card: the same
+ * gold-on-ink identity, the ribbon tag over the top edge, centered copy and a
+ * full-width gold CTA. The CTA adds to the cart inline via the global
+ * `cart:added` event (no toast stack).
  */
 export default function ProductCard({ product }: { product: Product }) {
   const t = useTranslations("Store");
@@ -40,10 +40,21 @@ export default function ProductCard({ product }: { product: Product }) {
   const summary = tAbout(`perfumes.${product.slug}.summary`);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-beige/10 bg-navy-deep transition-[transform,border-color] duration-500 ease-out-expo hover:-translate-y-1 hover:border-beige/25">
+    <article className="group relative flex flex-col overflow-visible border border-[#cd9e61]/30 bg-[#0A1128] transition-colors duration-300 ease-out-expo hover:border-[#cd9e61]">
+      {/* Ribbon tag — same plate the homepage cards wear */}
+      <div className="pointer-events-none absolute inset-x-[-1px] top-0 z-30 -translate-y-[52%]">
+        <Image
+          src="/images/new_hero/card_tag.png"
+          alt=""
+          width={400}
+          height={120}
+          className="h-auto w-full"
+        />
+      </div>
+
       <Link
         href={`/store/${product.slug}`}
-        className="relative block aspect-[4/5] w-full overflow-hidden"
+        className="relative block aspect-[4/5] w-full overflow-hidden bg-[#0A1128] pt-12"
         aria-label={name}
       >
         <Image
@@ -51,49 +62,42 @@ export default function ProductCard({ product }: { product: Product }) {
           alt={name}
           fill
           sizes="(min-width: 64rem) 22vw, (min-width: 48rem) 45vw, 90vw"
-          className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
-        <span
-          aria-hidden="true"
-          className="absolute right-4 top-4 h-10 w-10 rounded-full opacity-80"
-          style={{ backgroundColor: product.accent }}
+          className="object-contain transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
         />
       </Link>
 
-      <div className="flex flex-1 flex-col gap-3 p-6">
-        <div>
-          <h3 className="font-primary text-h3 text-beige">{name}</h3>
-          <p className="mt-1 text-small text-gold">{tag}</p>
-        </div>
-        <p className="text-small leading-relaxed text-beige/70">{summary}</p>
-
-        <div className="mt-auto flex items-end justify-between gap-4 pt-2">
-          <div>
-            <p className="text-micro text-beige/50">{t("from")}</p>
-            <p className="font-secondary text-h3 tabular-nums text-beige">
-              {formatPrice(product.price)}
-              <span className="mr-1 text-small text-beige/60">{t("currency")}</span>
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => add(product.slug)}
-            className={`inline-flex shrink-0 items-center justify-center rounded-full px-5 py-2.5 text-small font-medium transition-[color,background-color,transform] duration-press ease-out-expo active:scale-[0.97] ${
-              added
-                ? "bg-beige text-navy-ink"
-                : "bg-gold text-navy-ink hover:bg-beige"
-            }`}
-          >
-            {added && (
-              <span key={added ? "on" : "off"} className="pop-in mr-1.5" aria-hidden="true">
-                ✓
-              </span>
-            )}
-            {added ? (t("added") ?? "Added") : (t("addToCart") ?? "Add")}
-          </button>
-        </div>
+      <div className="flex flex-1 flex-col items-center bg-[#0A1128] px-6 pb-6 pt-5 text-center">
+        <h3 className="font-primary text-lg font-semibold tracking-wide text-[#cd9e61] md:text-xl">
+          {name}
+        </h3>
+        <p className="mt-1.5 font-secondary text-xs uppercase tracking-[0.2em] text-gold/80 sm:text-sm">
+          {tag}
+        </p>
+        <p className="mt-2 font-secondary text-xs leading-relaxed text-[#f6e6d6]/85 sm:text-sm">
+          {summary}
+        </p>
+        <p className="mt-5 font-secondary text-base text-[#f6e6d6] md:mt-6">
+          {formatPrice(product.price)}
+          <span className="mr-1 text-small text-[#f6e6d6]/60">{t("currency")}</span>
+        </p>
       </div>
+
+      <button
+        type="button"
+        onClick={() => add(product.slug)}
+        className={`mt-auto inline-flex w-full items-center justify-center py-3.5 text-sm font-medium transition-[color,background-color,transform] duration-press ease-out-expo active:scale-[0.97] ${
+          added
+            ? "bg-beige text-navy-ink"
+            : "bg-[#cd9e61] text-[#081127] hover:bg-beige"
+        }`}
+      >
+        {added && (
+          <span key={added ? "on" : "off"} className="pop-in mr-1.5" aria-hidden="true">
+            ✓
+          </span>
+        )}
+        {added ? (t("added") ?? "Added") : (t("addToCart") ?? "Add")}
+      </button>
     </article>
   );
 }

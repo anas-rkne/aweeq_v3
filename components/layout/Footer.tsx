@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Brandify from "@/components/ui/Brandify";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -147,7 +148,7 @@ export default function Footer() {
               <TikTokIcon />
             </a>
           </div>
-          <p className="text-xs text-beige/60">{t("copyrightText")}</p>
+          <p className="text-xs text-beige/60"><Brandify text={t("copyrightText")} /></p>
         </div>
       </div>
     </footer>

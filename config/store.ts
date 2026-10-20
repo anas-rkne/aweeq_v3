@@ -14,7 +14,7 @@ export type CivilizationKey = "egypt" | "babylon" | "greece" | "china";
 
 export type Product = {
   slug: CivilizationKey;
-  /** Display price in SAR (whole number). */
+  /** Display price in AED (whole number). */
   price: number;
   /** Millilitres — shown on the product card and detail page. */
   sizeMl: number;

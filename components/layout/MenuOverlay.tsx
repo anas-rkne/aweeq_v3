@@ -87,7 +87,7 @@ export default function MenuOverlay({ open, onClose }: MenuOverlayProps) {
           alt=""
           width={44}
           height={44}
-          className="h-9 w-9 object-contain md:h-11 md:w-11"
+          className="h-12 w-12 object-contain md:h-14 md:w-14"
         />
         <button
           type="button"

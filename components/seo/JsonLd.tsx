@@ -22,7 +22,7 @@ export default function StoreJsonLd() {
         brand: { "@type": "Brand", name: "3WEEQ" },
         offers: {
           "@type": "Offer",
-          priceCurrency: "SAR",
+          priceCurrency: "AED",
           price: p.price,
           availability: "https://schema.org/InStock",
           url: `${SITE_URL}/store/${p.slug}`,

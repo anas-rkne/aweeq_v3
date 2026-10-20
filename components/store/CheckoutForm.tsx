@@ -10,6 +10,7 @@ import {
   getProduct,
 } from "@/config/store";
 import { useCart } from "@/components/cart/CartContext";
+import Brandify from "@/components/ui/Brandify";
 
 /**
  * Checkout — a short, honest order form (MASTER-PLAN §5.1: order → copy /
@@ -125,7 +126,7 @@ export default function CheckoutForm() {
     return (
       <div className="panel-in mx-auto max-w-xl px-6 py-24 text-center">
         <h1 className="font-primary text-h2 text-beige">{t("emptyTitle")}</h1>
-        <p className="mt-3 text-body text-beige/70">{t("emptyDesc")}</p>
+        <p className="mt-3 text-body text-beige/70"><Brandify text={t("emptyDesc")} /></p>
         <Link
           href="/store"
           className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-8 py-3 text-small font-medium text-navy-ink transition-[color,background-color,transform] duration-press ease-out-expo hover:bg-beige active:scale-[0.97]"

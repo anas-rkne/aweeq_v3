@@ -37,7 +37,7 @@ export default function Navbar() {
               width={44}
               height={44}
               loading="eager"
-              className="h-12 w-12 object-contain md:h-16 md:w-16"
+              className="h-14 w-14 object-contain md:h-20 md:w-20"
             />
           </Link>
 

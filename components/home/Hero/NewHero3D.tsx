@@ -90,41 +90,45 @@ export default function NewHero3D() {
 
   return (
     <div data-hero-root className="relative">
-      {/* HERO SECTION */}
-      <section className="relative h-[100svh] overflow-hidden bg-[#050a14]">
-        <div aria-hidden="true" className="absolute inset-0 z-0">
-          <Image
-            src="/images/new_hero/wall.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover"
-            style={{ filter: "contrast(1.15) saturate(1.25) brightness(0.95)" }}
-          />
-        </div>
+      {/* HERO SECTION — overflow-visible so the frame-breaking cheetah can
+          spill past the section edge; the parallax background is clipped by
+          its own wrapper so the scale never bleeds into the chapters below. */}
+      <section className="relative h-[100svh] overflow-visible bg-[#050a14]">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/new_hero/wall.jpg"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+              style={{ filter: "contrast(1.15) saturate(1.25) brightness(0.95)" }}
+            />
+          </div>
 
-        <div
-          ref={heroBgRef}
-          className="absolute inset-0 z-[1] will-change-transform"
-        >
-          <Image
-            src="/images/new_hero/civilizations_five_mobile_hero.png"
-            alt=""
-            fill
-            sizes="100vw"
-            preload
-            className="object-cover object-[50%_100%] md:hidden"
-            style={{ filter: "contrast(1.15) saturate(1.25) brightness(0.95)" }}
-          />
-          <Image
-            src="/images/new_hero/civilizations_five_desktop_hero.png"
-            alt=""
-            fill
-            sizes="100vw"
-            preload
-            className="hidden object-cover object-[50%_100%] md:block"
-            style={{ filter: "contrast(1.15) saturate(1.25) brightness(0.95)" }}
-          />
+          <div
+            ref={heroBgRef}
+            className="absolute inset-0 z-[1] will-change-transform"
+          >
+            <Image
+              src="/images/new_hero/civilizations_five_mobile_hero.png"
+              alt=""
+              fill
+              sizes="100vw"
+              preload
+              className="object-cover object-[50%_100%] md:hidden"
+              style={{ filter: "contrast(1.15) saturate(1.25) brightness(0.95)" }}
+            />
+            <Image
+              src="/images/new_hero/civilizations_five_desktop_hero.png"
+              alt=""
+              fill
+              sizes="100vw"
+              preload
+              className="hidden object-cover object-[50%_100%] md:block"
+              style={{ filter: "contrast(1.15) saturate(1.25) brightness(0.95)" }}
+            />
+          </div>
         </div>
 
         <div
@@ -176,6 +180,20 @@ export default function NewHero3D() {
         <div className="hidden md:block">
           <HeroOverlay />
         </div>
+
+        {/* Frame-breaking cheetah — transparent head+paw PNG peeking in from
+            the right edge: top-right on phones, mid-right on desktop, floating
+            above the stage via drop-shadow. Faces left (towards the bottle);
+            pointer-events-none keeps the CTAs underneath fully clickable. */}
+        <Image
+          src="/images/new_hero/cheetah.png"
+          alt=""
+          aria-hidden="true"
+          width={768}
+          height={1376}
+          sizes="(min-width: 768px) 30vw, 40vw"
+          className="pointer-events-none absolute -right-10 top-16 z-50 w-[40vw] drop-shadow-2xl md:-right-8 md:top-1/2 md:w-[30vw] md:-translate-y-1/2"
+        />
       </section>
 
       {CIVILIZATIONS.map((slug: CivilizationKey, index: number) => (
