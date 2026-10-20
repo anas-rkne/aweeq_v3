@@ -1,0 +1,368 @@
+{
+  "Meta": {
+    "title": "3WEEQ — A world where civilizations are told in scent",
+    "description": "An immersive journey through the perfumes of Egypt, Babylon, Greece, and China — one bottle, four civilizations."
+  },
+  "About": {
+    "title": "About Aweeq",
+    "paragraphOne": "We consider perfume not through the note alone, but together with its sensory, cultural and commercial dimensions — bringing the depth of story and the craft of the perfumer onto the same ground.",
+    "paragraphTwo": "Distinction often emerges where craft meets timing. We build our work on three principles: mastery, discipline, and trust.",
+    "ctaLabel": "About Us",
+    "watermark": "PERFUMES",
+    "insightsHeading": "Insights",
+    "insightsSubheading": "Readings on craft and story",
+    "insightsCta": "Discover the Collection",
+    "perfumes": {
+      "egypt": {
+        "name": "Egypt",
+        "summary": "Dawn light on the banks of the Nile, kept in a bottle."
+      },
+      "babylon": {
+        "name": "Babylon",
+        "summary": "The first rose plucked in the Hanging Gardens."
+      },
+      "greece": {
+        "name": "Greece",
+        "summary": "Where scent became an idea told aloud."
+      },
+      "china": {
+        "name": "China",
+        "summary": "The secrets of the East, sealed by the Silk Road."
+      }
+    },
+    "insightsItems": {
+      "egypt": {
+        "title": "From Lotus to Bottle"
+      },
+      "babylon": {
+        "title": "The Art of Babylonian Beauty"
+      },
+      "greece": {
+        "title": "The Wisdom of Greek Perfume"
+      },
+      "china": {
+        "title": "Across the Silk Road"
+      }
+    }
+  },
+  "Hero": {
+    "headline": "Where Civilizations Are Told in Scent",
+    "support": "One bottle, four civilizations.",
+    "cta": "Discover the Collection",
+    "storyCta": "Read the story",
+    "ui": {
+      "nav": {
+        "experiences": "Experiences",
+        "story": "Story",
+        "about": "About",
+        "login": "Log in",
+        "signup": "Sign up"
+      },
+      "stats": {
+        "clientsValue": "20K+",
+        "clientsLabel": "Happy Clients",
+        "scentsValue": "2K+",
+        "scentsLabel": "Custom Scents",
+        "staysValue": "5K+",
+        "staysLabel": "Arranged Stays"
+      },
+      "book": "Discover AWEEQ",
+      "blurb": "A scent that tells the story of civilizations — discover AWEEQ in our store.",
+      "hero": {
+        "tagline1": "AWEEQ",
+        "tagline2": "The Last Remnant of Every Civilization"
+      },
+      "card": {
+        "eyebrow": "Featured Scent",
+        "title": "The Nile at Dawn",
+        "index": "01",
+        "total": "10"
+      },
+      "chapters": {
+        "egypt": {
+          "kicker": "3WEEQ × Egypt",
+          "headline": "From the Nile, 3WEEQ Was Born",
+          "body": "In ancient Egypt, perfume was not ornament —\nit was the language a civilization wrote its secrets in.\nFrom Nile clay and temple light we learned\nthat scent is a memory which never ages.\nOut of that inheritance we made 3WEEQ:\none vessel carrying an entire civilization.",
+          "cta": "Discover the Scent of Egypt"
+        },
+        "babylon": {
+          "kicker": "3WEEQ × Babylon",
+          "headline": "Between Two Rivers, Scent Became Art",
+          "body": "Babylon wrote its laws on clay —\nand its beauty in smoke and oil.\nIn the hanging gardens the first rose opened,\nand saffron was weighed like gold.\nFrom that alchemy of earth and fire,\n3WEEQ carries the first perfume the world knew.",
+          "cta": "Discover the Scent of Babylon"
+        },
+        "greece": {
+          "kicker": "3WEEQ × Greece",
+          "headline": "Where Scent Learned to Think",
+          "body": "In Greece, perfume left the temple for the mind —\nolive groves, laurel and cypress distilled into thought.\nAthletes were anointed before the games,\nand philosophers wore memory on their skin.\nFrom that pursuit of beauty and meaning,\n3WEEQ carries the wisdom of scent.",
+          "cta": "Discover the Scent of Greece"
+        },
+        "china": {
+          "kicker": "3WEEQ × China",
+          "headline": "Along the Silk Road, Rises a Fragrance",
+          "body": "China taught perfume the patience of gardens:\ntea sleeping in jars, sandalwood aging in the dark,\njasmine opening only for the night.\nIncense marked the hours of emperors,\nand a scent could be inherited like a name.\n3WEEQ carries that measured breath.",
+          "cta": "Discover the Scent of China"
+        }
+      }
+    }
+  },
+  "Gallery": {
+    "eyebrow": "The Gallery",
+    "title": "The Bottle Gallery",
+    "subheading": "Four civilizations, kept in a bottle.",
+    "ctaLabel": "Discover the Collection",
+    "items": {
+      "egypt": {
+        "name": "Egypt",
+        "tag": "Where the scent was born"
+      },
+      "babylon": {
+        "name": "Babylon",
+        "tag": "Where the first rose opened"
+      },
+      "greece": {
+        "name": "Greece",
+        "tag": "Where scent became wisdom"
+      },
+      "china": {
+        "name": "China",
+        "tag": "Where scent touched the sky"
+      }
+    }
+  },
+  "HandsFinale": {
+    "line": "When the past met the present... 3WEEQ was born"
+  },
+  "Nav": {
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openCart": "Open cart",
+    "siteMenu": "Site menu",
+    "primary": "Primary",
+    "toEnglish": "Switch to English",
+    "toArabic": "Switch to Arabic",
+    "login": "Log in",
+    "signup": "Sign up",
+    "tagline": "A world where civilizations are told in scent"
+  },
+  "Footer": {
+    "tagline": "A world where civilizations are told in scent.",
+    "copyright": "Copyright © 2026 3WEEQ. All rights reserved.",
+    "copyrightText": "© 2026 AWEEQ. All rights reserved.",
+    "brandTagline": "The remainder of every civilization. In one bottle.",
+    "backToTop": "Back to top",
+    "quick": {
+      "title": "Quick Links",
+      "home": "Home",
+      "collection": "The Collection",
+      "craft": "The Craft",
+      "contact": "Contact us"
+    },
+    "customer": {
+      "title": "Customer Service",
+      "shipping": "Shipping",
+      "returns": "Returns",
+      "privacy": "Privacy Policy"
+    },
+    "newsletter": {
+      "title": "Join the Circle",
+      "subtitle": "Be the first to know about our news",
+      "placeholder": "Your email",
+      "button": "Subscribe"
+    },
+    "links": {
+      "story": "The Story",
+      "collection": "The Collection",
+      "store": "The Store"
+    },
+    "emailLabel": "E-mail address",
+    "phoneLabel": "Phone number",
+    "addressLabel": "Address",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "Menu": {
+    "story": "The Story",
+    "collection": "The Collection",
+    "store": "The Store"
+  },
+  "Cart": {
+    "title": "Cart",
+    "close": "Close cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "You haven't added anything yet. Begin your journey through the world of 3WEEQ.",
+    "cta": "Begin the Journey"
+  },
+  "Store": {
+    "eyebrow": "The Store",
+    "title": "The 3WEEQ Collection",
+    "subtitle": "Four civilizations, in one bottle",
+    "from": "From",
+    "currency": "SAR",
+    "ml": "ml",
+    "view": "View details",
+    "details": "Details",
+    "backToStore": "Back to the store",
+    "story": "The Story",
+    "notes": "The Notes",
+    "notesTop": "Top",
+    "notesHeart": "Heart",
+    "notesBase": "Base",
+    "size": "Size",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "addToCart": "Add to cart",
+    "added": "Added to cart",
+    "soldOut": "Sold out",
+    "shippingNote": "Free delivery on orders over {amount}",
+    "notFound": "Product not found",
+    "notFoundDesc": "The link you followed no longer exists.",
+    "relatedTitle": "Complete the set",
+    "products": {
+      "egypt": {
+        "name": "Egypt",
+        "tag": "Where the perfume was born",
+        "story": "From blue lotus, myrrh and frankincense, the Egyptians drew the first scent ever told. A fragrance like dawn light on the banks of the Nile — clear, warm and eternal.",
+        "notesTop": "Blue lotus · Bergamot",
+        "notesHeart": "Myrrh · Frankincense",
+        "notesBase": "Sandalwood · Musk"
+      },
+      "babylon": {
+        "name": "Babylon",
+        "tag": "Where the first rose bloomed",
+        "story": "In the Hanging Gardens, the first rose was plucked at dawn, and the golden threads of saffron dried under the Babylonian sun. A perfume for art and beauty.",
+        "notesTop": "Damask rose · Saffron",
+        "notesHeart": "Oud · Jasmine",
+        "notesBase": "Amber · Vanilla"
+      },
+      "greece": {
+        "name": "Greece",
+        "tag": "Where perfume became wisdom",
+        "story": "In the white temples beneath the Aegean sky, flowers were consecrated as gifts to the gods, and the Greeks composed the first fragrance that told a story. A perfume like an idea.",
+        "notesTop": "Bergamot · Neroli",
+        "notesHeart": "Rose · Iris",
+        "notesBase": "Cedarwood · Frankincense"
+      },
+      "china": {
+        "name": "China",
+        "tag": "Where perfume touched the sky",
+        "story": "The scent crossed the Silk Road carrying the secrets of the East, and rose mingled with musk and oud. A perfume that touches the sky and is kept forever.",
+        "notesTop": "White tea · Bergamot",
+        "notesHeart": "Rose · Musk",
+        "notesBase": "Oud · Sandalwood"
+      }
+    },
+    "cart": {
+      "title": "Cart",
+      "close": "Close cart",
+      "itemsLabel": "item(s) in cart",
+      "subtotal": "Subtotal",
+      "shipping": "Delivery",
+      "shippingFree": "Free",
+      "total": "Total",
+      "checkout": "Checkout",
+      "continueShopping": "Continue shopping",
+      "remove": "Remove",
+      "emptyCta": "Browse the collection"
+    },
+    "checkout": {
+      "eyebrow": "Checkout",
+      "title": "Order details",
+      "summary": "Order summary",
+      "name": "Full name",
+      "phone": "Phone number",
+      "city": "City",
+      "address": "Address",
+      "notes": "Notes (optional)",
+      "submit": "Place order",
+      "required": "This field is required",
+      "invalidPhone": "Enter a valid phone number",
+      "successTitle": "Your order was received",
+      "successBody": "We'll be in touch shortly to confirm the order and arrange payment and delivery.",
+      "copyOrder": "Copy order",
+      "copied": "Copied",
+      "whatsapp": "Send via WhatsApp",
+      "placeAnother": "Continue shopping",
+      "emptyTitle": "Your cart is empty",
+      "emptyDesc": "You haven't added anything yet. Browse the collection, then come back to check out.",
+      "note": "No payment is taken on the site. We'll confirm your order and arrange payment and delivery.",
+      "orderRef": "Order ref"
+    }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The link you followed leads nowhere — go back to the beginning, for that is where the story starts.",
+    "cta": "Return home"
+  },
+  "Closing": {
+    "eyebrow": "The Closing",
+    "title": "Order your collection today",
+    "body": "Four civilizations in one bottle. Choose your scent, or discover the full collection — every batch carries its own number.",
+    "cta": "Shop the collection",
+    "newsletterLabel": "E-mail address",
+    "newsletterPlaceholder": "you@example.com",
+    "newsletterCta": "Subscribe",
+    "thanks": "Thank you for joining — we'll be in touch.",
+    "trust": {
+      "shipping": "Fast delivery within the Kingdom",
+      "authentic": "100% authentic products",
+      "secure": "Secure ordering, no online payment"
+    }
+  },
+  "EgyptReveal": {
+    "kicker": "3WEEQ and the civilization of Egypt",
+    "headline": "From the Nile, 3WEEQ Was Born",
+    "body": "In ancient Egypt, perfume was not ornament —\nit was the language a civilization wrote its secrets in.\nFrom Nile clay and temple light we learned\nthat scent is a memory which never ages.\nOut of that inheritance we made 3WEEQ:\none vessel carrying an entire civilization.",
+    "cta": "Discover the Scent of Egypt"
+  },
+  "BabylonReveal": {
+    "kicker": "3WEEQ and the civilization of Babylon",
+    "headline": "Between Two Rivers, Scent Became Art",
+    "body": "Babylon wrote its laws on clay —\nand its beauty in smoke and oil.\nIn the hanging gardens the first rose opened,\nand saffron was weighed like gold.\nFrom that alchemy of earth and fire,\n3WEEQ carries the first perfume the world knew.",
+    "cta": "Discover the Scent of Babylon"
+  },
+  "GreeceReveal": {
+    "kicker": "3WEEQ and the civilization of Greece",
+    "headline": "Where Scent Learned to Think",
+    "body": "In Greece, perfume left the temple for the mind —\nolive groves, laurel and cypress distilled into thought.\nAthletes were anointed before the games,\nand philosophers wore memory on their skin.\nFrom that pursuit of beauty and meaning,\n3WEEQ carries the wisdom of scent.",
+    "cta": "Discover the Scent of Greece"
+  },
+  "ChinaReveal": {
+    "kicker": "3WEEQ and the civilization of China",
+    "headline": "Along the Silk Road, Rises a Fragrance",
+    "body": "China taught perfume the patience of gardens:\ntea sleeping in jars, sandalwood aging in the dark,\njasmine opening only for the night.\nIncense marked the hours of emperors,\nand a scent could be inherited like a name.\n3WEEQ carries that measured breath.",
+    "cta": "Discover the Scent of China"
+  },
+  "Collection": {
+    "title": "The Collection",
+    "subtitle": "Four scents .. one story",
+    "addToCart": "Add to cart",
+    "price": "450 AED",
+    "products": {
+      "egypt": {
+        "name": "AWEEQ — Egypt",
+        "desc": "The breath of the lotus.. the spirit of eternity"
+      },
+      "babylon": {
+        "name": "AWEEQ — Babylon",
+        "desc": "The smoke of saffron.. the beauty of the gardens"
+      },
+      "greece": {
+        "name": "AWEEQ — Greece",
+        "desc": "Olive and laurel.. the wisdom of scent"
+      },
+      "china": {
+        "name": "AWEEQ — China",
+        "desc": "Jasmine and sandalwood.. the patience of gardens"
+      }
+    }
+  },
+  "Craftsmanship": {
+    "kicker": "The Craft",
+    "headline": "How is the rest made?",
+    "body": "At the heart of nature, we choose the rarest ingredients from the finest land in the world, extracting flowers and oud slowly and carefully, in a traditional process that demands patience and expertise to turn into an eternal perfume.",
+    "cta": "Discover our craft"
+  }
+}
