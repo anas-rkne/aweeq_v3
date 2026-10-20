@@ -18,6 +18,14 @@ export default function CraftsmanshipSection() {
       
       {/* Full background (Desktop) / Mobile Background (Top Half) */}
       <div aria-hidden="true" className="absolute inset-0 z-0 h-[45vh] md:h-full">
+        {/* الجدار تحت طبقة الغيوم — موبايل فقط */}
+        <Image
+          src="/images/new_hero/wall.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover md:hidden"
+        />
         <Image
           src="/images/new_hero/cheetah_clouds_clean_background.png"
           alt="Cheetah Background"
@@ -57,8 +65,9 @@ export default function CraftsmanshipSection() {
           </div>
         </div>
 
-        {/* Text & Button Section */}
-        <div className="relative z-20 mt-8 flex w-full flex-col items-end text-right md:mt-0 md:ml-auto md:max-w-xl">
+        {/* Text & Button Section — على الموبايل المحتوى كله بالنص والزر تحته،
+            وعلى الديسكتوب يرجع للحافة اليمنى كالسابق. */}
+        <div className="relative z-20 mt-8 flex w-full flex-col items-center text-center md:mt-0 md:ml-auto md:max-w-xl md:items-end md:text-right">
           <p className="font-primary text-lg leading-relaxed text-beige/95 sm:text-xl md:text-2xl">
             في قلب الطبيعة، نختار أندر المكونات من أجود أرض في العالم، نستخلص الزهور والعود ببطء وبعناية، في عملية تقليدية تتطلب الصبر والخبرة لتحويلها إلى عطر
           </p>
@@ -74,10 +83,10 @@ export default function CraftsmanshipSection() {
         </div>
       </div>
 
-      {/* Bottom Gradient */}
+      {/* Bottom Gradient — مخفي على الموبايل لأنه كان مغطي الزرار */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[18svh] bg-[linear-gradient(to_top,#050a14_0%,rgba(5,10,20,0.9)_20%,rgba(5,10,20,0.6)_60%,transparent_100%)]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden h-[18svh] bg-[linear-gradient(to_top,#050a14_0%,rgba(5,10,20,0.9)_20%,rgba(5,10,20,0.6)_60%,transparent_100%)] md:block"
       />
     </section>
   );

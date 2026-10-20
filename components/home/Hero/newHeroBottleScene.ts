@@ -134,7 +134,11 @@ export function createNewHeroBottleScene(
   // rather than stepped with the (coarse) scrub updates.
   let spinTarget = 0;
   let spinCurrent = 0;
+  // The render loop is paused entirely while the canvas is offscreen — two
+  // full scenes rendering forever on a phone is what starves the scroll.
+  let running = false;
   const animate = () => {
+    if (!running) return;
     raf = requestAnimationFrame(animate);
     if (document.hidden) return;
     const dt = Math.min(clock.getDelta(), 0.05);
@@ -143,7 +147,28 @@ export function createNewHeroBottleScene(
     group.rotation.y = idle;
     renderer.render(scene, camera);
   };
-  animate();
+  const startLoop = () => {
+    if (running || disposed) return;
+    running = true;
+    clock.getDelta();
+    raf = requestAnimationFrame(animate);
+  };
+  const stopLoop = () => {
+    running = false;
+    cancelAnimationFrame(raf);
+  };
+  startLoop();
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) startLoop();
+        else stopLoop();
+      }
+    },
+    { rootMargin: "10% 0px" }
+  );
+  io.observe(container);
 
   const resize = () => {
     const w = container.clientWidth;
@@ -162,7 +187,8 @@ export function createNewHeroBottleScene(
     },
     dispose() {
       disposed = true;
-      cancelAnimationFrame(raf);
+      stopLoop();
+      io.disconnect();
       ro.disconnect();
       group.traverse((obj) => {
         const mesh = obj as THREE.Mesh;

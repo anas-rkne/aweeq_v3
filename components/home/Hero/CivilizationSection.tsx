@@ -82,31 +82,46 @@ export default function CivilizationSection({
       // Copy reveal — the words rise and fade in, line by line, as the chapter
       // takes the frame. Stretched across the full entry so the motion is read,
       // not skipped: it starts the moment the section enters and settles as the
-      // section centres, then reverses on the way back up.
-      const words = copy.querySelectorAll("[data-reveal]");
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top 90%",
-            end: "top 35%",
-            scrub: 0.5,
-            invalidateOnRefresh: true,
-          },
-        })
-        .fromTo(
-          words,
-          { autoAlpha: 0, y: 48, filter: "blur(6px)" },
-          {
-            autoAlpha: 1,
-            y: 0,
-            filter: "blur(0px)",
-            ease: "power2.out",
-            stagger: 0.4,
-            duration: 1.4,
-          },
-          0
-        );
+      // section centres, then reverses on the way back up. The blur pass runs
+      // on desktop only — a scrubbed `filter` over a full-width text block is
+      // the single most expensive thing a phone compositor can be asked to do
+      // while scrolling, and it is what froze the page at this section.
+      const mm = gsap.matchMedia();
+      mm.add(
+        {
+          isDesktop: "(min-width: 64rem)",
+          isMobile: "(max-width: 63.9875rem)",
+        },
+        (context) => {
+          const { isDesktop } = context.conditions as { isDesktop: boolean };
+          const words = copy.querySelectorAll("[data-reveal]");
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: section,
+                start: "top 90%",
+                end: "top 35%",
+                scrub: 0.5,
+                invalidateOnRefresh: true,
+              },
+            })
+            .fromTo(
+              words,
+              isDesktop
+                ? { autoAlpha: 0, y: 48, filter: "blur(6px)" }
+                : { autoAlpha: 0, y: 48 },
+              {
+                autoAlpha: 1,
+                y: 0,
+                ...(isDesktop ? { filter: "blur(0px)" } : {}),
+                ease: "power2.out",
+                stagger: 0.4,
+                duration: 1.4,
+              },
+              0
+            );
+        }
+      );
     },
     { scope: sectionRef }
   );
