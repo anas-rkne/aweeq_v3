@@ -140,47 +140,15 @@ export default function NewHero3D() {
           className="pointer-events-none absolute inset-0 z-[6] bg-[radial-gradient(80%_70%_at_50%_42%,transparent_38%,rgba(8,15,27,0.62)_100%)]"
         />
 
-        {/* Mobile layout */}
-        <div className="pointer-events-none absolute inset-0 z-[60] flex flex-col items-center justify-center md:hidden">
-          <div className="flex w-full flex-col items-center px-6">
-            <div className="mb-6 text-center">
-              <div className="font-primary text-[14vw] leading-none tracking-tight text-beige [text-shadow:_0px_6px_18px_rgba(0,0,0,0.95),_0px_0px_30px_rgba(0,0,0,0.8)]">
-                {tHero("hero.tagline1")}
-              </div>
-              <div className="mt-4 font-primary text-[5vw] leading-none tracking-[0.28em] text-beige/95 [text-shadow:_0px_6px_18px_rgba(0,0,0,0.95),_0px_0px_30px_rgba(0,0,0,0.8)]">
-                {tHero("hero.tagline2")}
-              </div>
+        {/* Mobile layout — taglines sit in the top band; the shared glass below
+            holds the stage, exactly like the desktop composition. */}
+        <div className="pointer-events-none absolute inset-0 z-[60] flex flex-col items-center justify-start px-6 pt-[12svh] md:hidden">
+          <div className="w-full text-center">
+            <div className="font-primary text-[14vw] leading-none tracking-tight text-beige [text-shadow:_0px_6px_18px_rgba(0,0,0,0.95),_0px_0px_30px_rgba(0,0,0,0.8)]">
+              {tHero("hero.tagline1")}
             </div>
-            <div className="relative">
-              <div
-                ref={cercileRef}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-                style={{ transformOrigin: "50% 50%", willChange: "transform", opacity: 0.05 }}
-              >
-                <Image
-                  src="/images/new_hero/cercile.png"
-                  alt=""
-                  width={900}
-                  height={900}
-                  className="h-[min(76vw,62vh)] w-[min(76vw,62vh)] object-contain"
-                />
-              </div>
-              <div
-                ref={bottleRef}
-                className="relative mx-auto h-[44svh] w-[19svh] will-change-transform"
-              >
-                <div
-                  aria-hidden="true"
-                  className="absolute -bottom-5 left-1/2 h-6 w-[180%] -translate-x-1/2 rounded-[50%] bg-black/45 blur-xl"
-                />
-                <div className="relative z-10 h-full w-full">
-                  <BottleCanvas
-                    onReady={(handle) => {
-                      bottleHandleRef.current = handle;
-                    }}
-                  />
-                </div>
-              </div>
+            <div className="mt-4 font-primary text-[5vw] leading-none tracking-[0.28em] text-beige/95 [text-shadow:_0px_6px_18px_rgba(0,0,0,0.95),_0px_0px_30px_rgba(0,0,0,0.8)]">
+              {tHero("hero.tagline2")}
             </div>
           </div>
         </div>
@@ -214,8 +182,11 @@ export default function NewHero3D() {
         <CivilizationSection key={slug} slug={slug} index={index} />
       ))}
 
+      {/* One shared glass for every breakpoint — sticky across the hero and all
+          four chapters. On phones it rides in the lower band so the chapter copy
+          keeps the empty space above it. */}
       <div className="pointer-events-none absolute inset-0 z-40">
-        <div className="sticky top-0 hidden h-[100svh] items-center justify-center md:flex">
+        <div className="sticky top-0 flex h-[100svh] items-center justify-center">
           <div
             className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
             style={{ transformOrigin: "50% 50%" }}
@@ -230,12 +201,12 @@ export default function NewHero3D() {
                 alt=""
                 width={900}
                 height={900}
-                className="h-[min(90vw,90vh)] w-[min(90vw,90vh)] object-contain"
+                className="h-[min(78vw,52svh)] w-[min(78vw,52svh)] object-contain md:h-[min(90vw,90vh)] md:w-[min(90vw,90vh)]"
               />
             </div>
             <div
               ref={bottleRef}
-              className="relative h-[40svh] w-[17svh] will-change-transform md:h-[46svh] md:w-[20svh]"
+              className="relative h-[32svh] w-[14svh] will-change-transform md:h-[46svh] md:w-[20svh]"
             >
               <div
                 aria-hidden="true"

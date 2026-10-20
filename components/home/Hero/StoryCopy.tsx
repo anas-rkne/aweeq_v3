@@ -25,7 +25,7 @@ export default function StoryCopy({
 
   return (
     <div
-      className={`pointer-events-none absolute inset-0 z-50 flex items-end justify-center px-6 pb-16 md:items-center md:px-16 md:pb-0 ${
+      className={`pointer-events-none absolute inset-0 z-50 flex items-start justify-center px-6 pt-[10svh] md:items-center md:px-16 md:pt-0 md:pb-0 ${
         isRtl ? "md:justify-end" : "md:justify-start"
       }`}
     >

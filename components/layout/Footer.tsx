@@ -4,10 +4,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
-/**
- * Luxury footer — strict 4-column CSS Grid, RTL, right-aligned within columns.
- * Copy is localized via the `Footer` namespace.
- */
 export default function Footer() {
   const t = useTranslations("Footer");
 
@@ -38,68 +34,76 @@ export default function Footer() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#0a1128]/88" />
+        <div className="absolute inset-0 bg-[#0a1128]/90" />
       </div>
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-8 pb-12 md:px-10 md:py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8 lg:gap-12">
-          {/* Column 1 (Far Right): Logo & Tagline */}
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-10 pb-8 md:px-10 md:py-16">
+        
+        {/* التخطيط الرئيسي */}
+        <div className="flex flex-col gap-10 md:grid md:grid-cols-4 md:gap-8 lg:gap-12">
+          
+          {/* 1. الشعار والوصف (الشعار مخفي على الموبايل ليظهر في الناف بار فقط) */}
           <div className="flex flex-col items-start text-right">
             <Image
               src="/art/hero/logo-11.png"
               alt="3WEEQ"
               width={56}
               height={56}
-              className="h-14 w-14 object-contain"
+              className="hidden md:block h-14 w-14 object-contain"
             />
-            <p className="mt-4 max-w-[14rem] font-secondary text-sm leading-relaxed text-beige/90">
+            <p className="font-secondary text-sm leading-relaxed text-beige/90 md:mt-4 max-w-[16rem]">
               {t("brandTagline")}
             </p>
           </div>
 
-          {/* Column 2 (Middle Right): Quick Links */}
-          <div className="flex flex-col items-end text-right">
-            <h3 className="mb-4 font-primary text-base font-semibold text-[#cd9e61]">
-              {t("quick.title")}
-            </h3>
-            <ul className="flex flex-col items-end gap-3">
-              {quickLinks.map((link) => (
-                <li key={link.href + link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-beige/80 transition-colors duration-300 hover:text-[#cd9e61]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* 2. الروابط (عمودين على الموبايل، عمودين منفصلين على الكمبيوتر) */}
+          <div className="grid grid-cols-2 gap-6 md:contents">
+            
+            {/* روابط سريعة */}
+            <div className="flex flex-col items-start text-right">
+              <h3 className="mb-4 font-primary text-base font-semibold text-[#cd9e61]">
+                {t("quick.title")}
+              </h3>
+              <ul className="flex flex-col items-start gap-3">
+                {quickLinks.map((link) => (
+                  <li key={link.href + link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-beige/80 transition-colors duration-300 hover:text-[#cd9e61]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* خدمة العملاء */}
+            <div className="flex flex-col items-start text-right">
+              <h3 className="mb-4 font-primary text-base font-semibold text-[#cd9e61]">
+                {t("customer.title")}
+              </h3>
+              <ul className="flex flex-col items-start gap-3">
+                {customerLinks.map((link) => (
+                  <li key={link.href + link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-beige/80 transition-colors duration-300 hover:text-[#cd9e61]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Column 3 (Middle Left): Customer Service */}
-          <div className="flex flex-col items-end text-right">
-            <h3 className="mb-4 font-primary text-base font-semibold text-[#cd9e61]">
-              {t("customer.title")}
-            </h3>
-            <ul className="flex flex-col items-end gap-3">
-              {customerLinks.map((link) => (
-                <li key={link.href + link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-beige/80 transition-colors duration-300 hover:text-[#cd9e61]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4 (Far Left): Newsletter */}
+          {/* 3. النشرة البريدية */}
           <div className="flex flex-col items-start text-right">
             <h3 className="mb-2 font-primary text-base font-semibold text-[#cd9e61]">
               {t("newsletter.title")}
             </h3>
-            <p className="mb-5 text-xs text-beige/70">
+            <p className="mb-4 text-xs text-beige/70">
               {t("newsletter.subtitle")}
             </p>
             <form
@@ -121,8 +125,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-[#cd9e61]/30 pt-6 md:flex-row">
+        {/* 4. الشريط السفلي (الحقوق والأيقونات) */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#cd9e61]/30 pt-6 md:flex-row">
           <div className="flex items-center gap-4">
             <a
               href="https://instagram.com"
@@ -150,33 +154,13 @@ export default function Footer() {
   );
 }
 
+// الأيقونات
 function InstagramIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect
-        x="2"
-        y="2"
-        width="20"
-        height="20"
-        rx="5"
-        ry="5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      />
-      <path
-        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      />
-      <line
-        x1="17.5"
-        y1="6.5"
-        x2="17.51"
-        y2="6.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
 }
